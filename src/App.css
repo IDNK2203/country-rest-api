@@ -1,38 +1,234 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+ul,
+ol {
+  list-style-type: none;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+}
+/* body {
+  background-color: hsl(207, 26%, 17%);
   color: white;
+} */
+.container {
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+.header {
+  background: hsl(209, 23%, 22%);
+  margin-bottom: 1.5rem;
+  box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.15);
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1.5rem 1rem;
+}
+.header__heading {
+  font-size: 1.2rem;
+}
+.toggle-switch {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.toggle-switch__btn {
+  background-color: transparent;
+  box-shadow: 0 0 0;
+  border: none;
+  color: inherit;
+  padding-left: 0.5rem;
+  font-family: inherit;
+}
+.search-bar {
+  position: relative;
+  flex: 1 1;
+  padding-right: 2rem;
+}
+.search-bar__icon {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.search-bar__input {
+  padding: 1rem 0.5rem 1rem 4rem;
+  width: 100%;
+  max-width: 450px;
+  margin: 0.75rem 0 2rem;
+  border: none;
+  border-radius: 5px;
+  color: inherit;
+  background: hsl(209, 23%, 22%);
+  outline: none;
+  box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.15);
+}
+.search-bar__input::placeholder {
+  color: inherit;
+  font-family: "Nunito Sans";
+}
+.dropdownInput {
+  border-radius: 5px;
+  padding: 0.75rem;
+  width: 200px;
+  outline: none;
+  color: inherit;
+  border: none;
+  margin: 0 0 1rem;
+  font-family: "Nunito Sans";
+  box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.15);
+  background: hsl(209, 23%, 22%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.countries {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 1rem 0;
+}
+.countries__item {
+  margin: 1rem;
+  box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.15);
+}
+.countries-img {
+  object-fit: cover;
+  height: 200px;
+}
+.countries-img-holder {
+  height: 200px;
+}
+.countries__description {
+  padding: 1rem;
+  background: hsl(209, 23%, 22%);
+}
+.countries__title {
+  padding: 0.5rem;
+}
+.countries__stats > * {
+  padding: 0.5rem;
+}
+.countries__stats span {
+  font-weight: 600;
+}
+
+.home-btn-container {
+  margin: 3rem 0;
+}
+
+.btn--link {
+  color: inherit;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.15);
+  margin: 1rem 0;
+  border-radius: 5px;
+  background: hsl(209, 23%, 22%);
+}
+.country__info {
+  margin: 2rem 0;
+}
+.country__stats {
+  margin: 2rem 0;
+}
+
+.country__stats span {
+  font-weight: 600;
+}
+
+.country__stat {
+  padding: 0.25rem 0;
+}
+
+.country__border-countries-label {
+  margin: 1rem 0;
+}
+.country__border-countries {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.country__border-country {
+  margin: 0.5rem 0.75rem 0.5rem 0;
+  padding: 0.5rem 2rem;
+  box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.15);
+  background: hsl(209, 23%, 22%);
+}
+
+/* .country__border-country:last-of-type{
+  margin-left: 0;
+} */
+
+/* Media queries */
+@media screen and (min-width: 680px) {
+  .countries {
+    flex-flow: row wrap;
   }
-  to {
-    transform: rotate(360deg);
+
+  .query-opts {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .countries__item {
+    margin: 0.5rem 0.5rem;
+    flex: 1 1 48%;
   }
 }
+
+@media screen and (min-width: 900px) {
+  .country,
+  .country__data {
+    display: flex;
+    align-items: center;
+  }
+  .country > *,
+  .country__data > * {
+    flex: 1 1 49%;
+  }
+  .country__flag-holder {
+    padding-right: 2rem;
+  }
+  .country__info {
+    margin: 0;
+  }
+  .country__title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .countries__item {
+    flex: 1 1 23%;
+  }
+}
+
+.lt__Bg {
+  background-color: hsl(0, 0%, 98%);
+}
+.lt__txt {
+  background-color: hsl(200, 15%, 8%);
+}
+.lt__ele-Bg {
+  background-color: hsl(0, 0%, 100%);
+}
+.lt__input-Bg {
+  background-color: hsl(0, 0%, 52%);
+}
+
+/* - Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+- Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%) */
